@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-base: #1a2332;
+    --color-base-light: #243044;
+    --color-base-lighter: #2d3a4f;
+    --color-panel: #f5f7fa;
+    --color-primary: #4a7a96;
+    --color-primary-dark: #3a6178;
+    --color-primary-light: #6a9ab5;
+    --color-high: #d93b3b;
+    --color-high-bg: #fce8e8;
+    --color-medium: #e89020;
+    --color-medium-bg: #fdf3e3;
+    --color-low: #4a8a5e;
+    --color-low-bg: #e8f5ec;
+    --color-info: #4a6a8a;
+    --color-info-bg: #e8eef5;
+    --color-text: #2a3340;
+    --color-text-light: #5a6a7a;
+    --color-text-inverse: #e8eef5;
+    --color-border: #d8dee8;
+    --color-border-dark: #3a4a5f;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--color-panel);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .sif-badge-high {
+    background-color: var(--color-high);
+    color: white;
+  }
+  .sif-badge-medium {
+    background-color: var(--color-medium);
+    color: white;
+  }
+  .sif-badge-low {
+    background-color: var(--color-low);
+    color: white;
+  }
+  .sif-badge-nonsif {
+    background-color: var(--color-info);
+    color: white;
+  }
+
+  .status-badge-pending {
+    background-color: var(--color-medium-bg);
+    color: var(--color-medium);
+    border: 1px solid var(--color-medium);
+  }
+  .status-badge-reviewed {
+    background-color: var(--color-low-bg);
+    color: var(--color-low);
+    border: 1px solid var(--color-low);
+  }
+  .status-badge-escalated {
+    background-color: var(--color-high-bg);
+    color: var(--color-high);
+    border: 1px solid var(--color-high);
+  }
+  .status-badge-dismissed {
+    background-color: #eee;
+    color: #666;
+    border: 1px solid #ccc;
+  }
+
+  .card {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    transition: background-color 0.15s;
+  }
+  .btn-primary:hover {
+    background-color: var(--color-primary-dark);
+  }
+
+  .nav-item {
+    transition: background-color 0.15s, color 0.15s;
+  }
+  .nav-item:hover {
+    background-color: #eef2f7;
+  }
+}
+
+@keyframes pulse-loading {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.animate-pulse-loading {
+  animation: pulse-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
